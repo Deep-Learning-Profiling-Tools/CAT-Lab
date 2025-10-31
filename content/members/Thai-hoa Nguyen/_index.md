@@ -22,7 +22,7 @@ organizations:
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: I like melting GPUs
 
 interests:
   - GPU Architecture
@@ -31,15 +31,9 @@ interests:
 
 education:
   courses:
-    - course: PhD in Artificial Intelligence
-      institution: Stanford University
-      year: 2012
-    - course: MEng in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2009
-    - course: BSc in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2008
+    - course: BSc in Computer Science
+      institution: George Mason University
+      year: 2026
 
 # Social/Academic Networking
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
@@ -52,6 +46,9 @@ social:
   - icon: github
     icon_pack: fab
     link: https://github.com/latentCall145
+  - icon: website
+    icon_pack: fab
+    link: https://latentcall145.github.io/
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''
