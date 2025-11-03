@@ -14,7 +14,7 @@ authors:
 superuser: false
 
 # Role/position
-role: CS PhD Student (2025— )
+role: 2025 Fall —
 
 # Organizations/Affiliations
 organizations:
