@@ -22,7 +22,7 @@ organizations:
     url: 'https://www.gmu.edu'
 
 # Short bio (displayed in user profile at end of posts)
-bio: bio: Bowen Cui is a second-year Ph.D. student at George Mason University advised by Prof. Keren Zhou. His research focuses on LLMs for code optimization and benchmarking.
+bio: Bowen Cui is a second-year Ph.D. student at George Mason University advised by Prof. Keren Zhou. His research interests focuses on LLMs for code optimization and benchmarking.
 
 interests:
   - LLMs for Coding
