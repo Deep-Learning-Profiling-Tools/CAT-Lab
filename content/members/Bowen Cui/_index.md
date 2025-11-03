@@ -19,26 +19,26 @@ role: 2024 Fall -
 # Organizations/Affiliations
 organizations:
   - name: George Mason University
-    url: ''
+    url: 'https://www.gmu.edu'
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: bio: Bowen Cui is a second-year Ph.D. student at George Mason University advised by Prof. Keren Zhou. His research focuses on LLMs for code optimization and benchmarking.
 
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - LLMs for Coding
+  - Code Agent
+  - LLMs benchmarking and Evaluation
 
 education:
   courses:
-    - course: PhD in Artificial Intelligence
-      institution: Stanford University
-      year: 2012
-    - course: MEng in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2009
-    - course: BSc in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
+    - course: PhD in Computer Science
+      institution: George Mason University
+      year: 2024
+    - course: MA in Statistics
+      institution: Washington University in St. Louis
+      year: 2022
+    - course: BSc in Applied Mathematics
+      institution: Xi'an Jiaotong Liverpool University
       year: 2008
 
 # Social/Academic Networking
@@ -48,21 +48,21 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:test@example.org'
-  - icon: twitter
+    link: 'mailto:bcui2@gmu.edu'
+  - icon: linkedin
     icon_pack: fab
-    link: https://twitter.com/GeorgeCushen
+    link: https://www.linkedin.com/in/bowen-cui-2a2a34233/
   - icon: google-scholar
     icon_pack: ai
-    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+    link: https://scholar.google.com/citations?user=Bxt28QQAAAAJ&hl=en
   - icon: github
     icon_pack: fab
-    link: https://github.com/gcushen
+    link: https://github.com/bowencui123
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
 #   icon_pack: ai
-#   link: files/cv.pdf
+#   link: uploads/Bowen_Cui_Resume_2025.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''
@@ -73,4 +73,6 @@ user_groups:
   - PhD Students
 ---
 
-say sth. here
+Hi! I'm a second-year CS Ph.D. student at George Mason University advised by **[Prof. Keren Zhou](https://www.jokeren.tech/)**.
+My research interests focuses on **LLMs benchmark and Evaluation**, **LLMs for Developer** (e.g. Programming and Coding, Performance Optimization), **LLM-Based Code Agent**, and **LLM Inference Optimization**.
+Previously, I worked with **Prof. Juan Zhai** (University of Massachusetts) on Trustworthy AI and with **Prof. *Muriah Wheelock* (Washington University at St. Louis) on Biomedical Statistics. Before that, I worked with **Prof. Jionglong Su** (Xi'an Jiaotong Liverpool University) on Reinformcent Learning for Trading Strategies.
