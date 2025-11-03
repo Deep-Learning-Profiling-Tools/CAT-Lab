@@ -23,8 +23,8 @@ bio: "Bowen Cui is a second-year Ph.D. student at George Mason University advise
 interests:
   - LLMs for Coding
   - LLM-based Code Agents
-  - LLM benchmarking and evaluation
-  - LLM inference optimization
+  - LLM Benchmarking and Evaluation
+  - LLM Inference Optimization
 
 education:
   courses:
