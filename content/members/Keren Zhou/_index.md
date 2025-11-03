@@ -58,4 +58,5 @@ user_groups:
   - Principal Investigator
 ---
 
-Hello! 
+I am an Assistant Professor in the Department of Computer Science at George Mason University, where I work with talented and motivated students in our lab. 
+It is a privilege to learn from them and support their growth as researchers and engineers.
