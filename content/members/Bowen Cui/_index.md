@@ -60,6 +60,6 @@ email: ""
 user_groups:
   - PhD Students
 ---
-Hi! I'm a second-year CS Ph.D. student at George Mason University advised by **[Prof. Keren Zhou](https://www.jokeren.tech/)**.
+Hi! I&#39;m a second-year CS Ph.D. student at George Mason University advised by **[Prof. Keren Zhou](https://www.jokeren.tech/)**.
 My research focuses on **LLM benchmarking and evaluation**, **LLM-based code agents**, **LLM inference optimization**, and **LLMs for developers** (programming, code optimization).
-Previously, I worked with **Prof. Juan Zhai** (University of Massachusetts) on trustworthy AI and with **Prof. Muriah Wheelock** (Washington University in St. Louis) on biomedical statistics. Before that, I worked with **Prof. Jionglong Su** (Xi'an Jiaotong Liverpool University) on reinforcement learning for trading strategies.
+Previously, I worked with **Prof. Juan Zhai** (University of Massachusetts) on trustworthy AI and with **Prof. Muriah Wheelock** (Washington University in St. Louis) on biomedical statistics. Before that, I worked with **Prof. Jionglong Su** (Xi&#39;an Jiaotong Liverpool University) on reinforcement learning for trading strategies.
