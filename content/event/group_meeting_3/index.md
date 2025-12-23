@@ -25,7 +25,7 @@ all_day: false
 publishDate: '2025-10-13T18:00:00Z'
 
 authors: [Jialiang GuJ
-tags: [group meeting, LLM agent, LLM for Codeg
+tags: [group meeting, LLM agent, LLM for Code]
 
 # Is this a featured talk? (true/false)
 featured: false
