@@ -24,7 +24,7 @@ all_day: false
 # Schedule page publish date (NOT talk date).
 publishDate: '2025-10-13T18:00:00Z'
 
-authors: [Jialiang GuJ
+authors: [Jialiang Gu]
 tags: [group meeting, LLM agent, LLM for Code]
 
 # Is this a featured talk? (true/false)
