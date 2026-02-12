@@ -14,7 +14,7 @@ authors:
   - Sijia Chen
   - Adnan Aziz
   - Jialiang Gu
-  - Thaihoa Nguyen
+  - Thai-hoa Nguyen
   - Keren Zhou
 
 # Author notes (optional)
@@ -35,7 +35,7 @@ publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
 publication: In The 3rd Triton Developer Conference
-publication_short: In *Triton 2025*
+publication_short: In *Triton Conference 2025*
 
 # abstract: DeepContext delivers cross-platform insights into deep learning workloads by combining context-aware profiling with actionable diagnostics for developers and performance engineers.
 
