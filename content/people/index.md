@@ -17,7 +17,7 @@ sections:
           - Undergraduate Students
           - High School Students
           - Collaborators
-          - Alumni
+          - Past Students
       sort_by: Params.last_name
       sort_ascending: true
     design:

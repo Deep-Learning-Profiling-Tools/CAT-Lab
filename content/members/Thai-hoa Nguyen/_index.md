@@ -1,9 +1,9 @@
 ---
 # Display name
-title: Thai-hoa Nguyen
+title: Thai-Hoa Nguyen
 
 # Full name (for SEO)
-first_name: Thai-hoa Nguyen
+first_name: Thai-Hoa
 last_name: Nguyen
 
 # Username (this should match the folder name)
@@ -14,7 +14,7 @@ authors:
 superuser: false
 
 # Role/position
-role: 2025 Fall - 
+role: 2025 Fall - 2026 Spring
 
 # Organizations/Affiliations
 organizations:
@@ -27,7 +27,7 @@ bio: I like melting GPUs
 interests:
   - GPU Architecture
   - CUDA Kernels
-  - Linear Attention Hybrids
+  - Efficient Model Architectures
 
 education:
   courses:
@@ -46,8 +46,8 @@ social:
   - icon: github
     icon_pack: fab
     link: https://github.com/latentCall145
-  - icon: website
-    icon_pack: fab
+  - icon: home
+    icon_pack: fas
     link: https://latentcall145.github.io/
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
@@ -56,7 +56,9 @@ email: ''
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Undergraduate Students
+  - Past Students
 ---
 
 I'm interested in anything that makes training and inference faster, from low-level kernel programming to high-level model architecture design. I also like open source! I've made (small) contributions to Huggingface and Triton in the past.
+
+During my time in CAT Lab, I worked on various parts of [Triton-viz](https://github.com/Deep-Learning-Profiling-Tools/triton-viz) (multi-DSL support, NKI interpreter, visualizer improvements) and a [visualizer for Triton's linear layouts](https://github.com/Deep-Learning-Profiling-Tools/linear-layout-viz).
