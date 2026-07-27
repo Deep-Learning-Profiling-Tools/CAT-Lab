@@ -159,6 +159,17 @@ months:
 
   - label: Nov 2026
     events:
+      - name: CC 2027
+        date: Nov 10
+        deadline: 2026-11-11T11:59:59Z
+        track: Main paper · projected
+        projected: true
+        detail: Projected from the 2026 cycle · official date pending
+        category: compilers
+        category_label: Compiler construction
+        signal: Requested compiler venue
+        direct: false
+        url: https://dblp.uni-trier.de/db/conf/cc/
       - name: PLDI 2027
         date: Nov 13
         deadline: 2026-11-14T11:59:59Z
