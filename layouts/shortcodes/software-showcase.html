@@ -1,0 +1,122 @@
+{{ $software := site.Data.software }}
+<section class="software-showcase">
+  <header class="software-hero">
+    <div>
+      <p class="software-overline">CAT LAB · OPEN SOURCE</p>
+      <h1>Software for seeing<br>what kernels are doing.</h1>
+    </div>
+    <div class="software-hero-copy">
+      <p>From tensor layouts to production profiling, these tools make GPU programs easier to inspect, debug, and accelerate.</p>
+      <div class="software-hero-meta" aria-label="Software collection summary">
+        <span><strong>05</strong> tools</span>
+        <span><strong>01</strong> ecosystem</span>
+        <span><strong>∞</strong> tensors</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="software-grid">
+    {{ range $software.projects }}
+      <article class="software-card software-card--{{ .slug }}">
+        <div class="software-preview" aria-hidden="true">
+          <div class="software-preview-topline">
+            <span>{{ .name }}</span>
+            <i></i><i></i><i></i>
+          </div>
+
+          {{ if eq .slug "linear-layout-viz" }}
+            <div class="software-layout-preview">
+              <div class="software-layout-heading">
+                <span>F₂ layout map</span>
+                <b>MMA v2 · m16n8 accumulator</b>
+              </div>
+              <div class="software-f2-matrix">
+                <b>F₂</b><span>r₀</span><span>r₁</span><span>l₀</span><span>l₁</span><span>l₂</span><span>l₃</span><span>l₄</span>
+                <strong>m₀</strong><i>0</i><i>0</i><i>0</i><i>0</i><i class="is-one">1</i><i>0</i><i>0</i>
+                <strong>m₁</strong><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i class="is-one">1</i><i>0</i>
+                <strong>m₂</strong><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i class="is-one">1</i>
+                <strong>m₃</strong><i>0</i><i class="is-one">1</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i>
+                <strong>n₀</strong><i class="is-one">1</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i><i>0</i>
+                <strong>n₁</strong><i>0</i><i>0</i><i class="is-one">1</i><i>0</i><i>0</i><i>0</i><i>0</i>
+                <strong>n₂</strong><i>0</i><i>0</i><i>0</i><i class="is-one">1</i><i>0</i><i>0</i><i>0</i>
+              </div>
+              <div class="software-mma-heading">
+                <span>16 × 8 fragment swizzle</span>
+                <b>lane · register</b>
+              </div>
+              <div class="software-mma-grid">
+                {{ range $row := seq 0 15 }}
+                  {{ range $column := seq 0 7 }}
+                    {{ $lane := add (mul (mod $row 8) 4) (div $column 2) }}
+                    {{ $register := add (mul (div $row 8) 2) (mod $column 2) }}
+                    <i class="is-thread-{{ mod $lane 4 }}" title="lane {{ $lane }}, register {{ $register }}">{{ $lane }}·{{ $register }}</i>
+                  {{ end }}
+                {{ end }}
+              </div>
+            </div>
+          {{ else if eq .slug "tensor-viz" }}
+            <div class="software-tensor-preview">
+              <div class="software-tensor-toolbar"><span>A</span><span>B</span><span>C</span><b>slice 08</b></div>
+              <div class="software-tensor-stack">
+                {{ range seq 1 3 }}
+                  <div class="software-tensor-plane">
+                    {{ range seq 1 20 }}<i></i>{{ end }}
+                  </div>
+                {{ end }}
+              </div>
+            </div>
+          {{ else if eq .slug "triton-viz" }}
+            <div class="software-triton-preview">
+              <div class="software-code-lines">
+                <span><b>01</b> @triton_viz.trace</span>
+                <span><b>02</b> offsets = tl.arange(0, 16)</span>
+                <span class="is-active"><b>03</b> values = tl.load(x + offsets)</span>
+                <span><b>04</b> tl.store(out + offsets, values)</span>
+              </div>
+              <div class="software-memory-panel">
+                <span>x + offset</span>
+                <div class="software-memory-map">
+                  {{ range $offset := seq 0 15 }}<i>+{{ $offset }}</i>{{ end }}
+                </div>
+              </div>
+              <div class="software-signal">16 contiguous addresses · traced</div>
+            </div>
+          {{ else if eq .slug "proton" }}
+            <div class="software-proton-preview">
+              <div class="software-proton-metric"><span>GPU time</span><strong>12.48 ms</strong></div>
+              <div class="software-proton-row"><span>forward</span><i style="--profile-width: 92%"></i></div>
+              <div class="software-proton-row"><span>attention</span><i style="--profile-width: 68%"></i></div>
+              <div class="software-proton-row"><span>matmul</span><i style="--profile-width: 46%"></i></div>
+              <div class="software-proton-row"><span>softmax</span><i style="--profile-width: 24%"></i></div>
+            </div>
+          {{ else if eq .slug "fasten" }}
+            <div class="software-fasten-preview">
+              <p>Segmented matrix multiplication</p>
+              <div class="software-benchmark-row"><span>Fasten</span><i style="--benchmark-width: 94%"></i><strong>13.65×</strong></div>
+              <div class="software-benchmark-row"><span>cuBLAS</span><i style="--benchmark-width: 33%"></i><strong>4.72×</strong></div>
+              <div class="software-benchmark-row is-baseline"><span>CUTLASS</span><i style="--benchmark-width: 7%"></i><strong>1×</strong></div>
+            </div>
+          {{ end }}
+        </div>
+
+        <div class="software-card-body">
+          <p class="software-kicker">{{ .kicker }}</p>
+          <h2>{{ .name }}</h2>
+          <p class="software-description">{{ .description }}</p>
+          <ul class="software-tags" aria-label="{{ .name }} topics">
+            {{ range .tags }}<li>{{ . }}</li>{{ end }}
+          </ul>
+          <div class="software-actions">
+            {{ if .live_url }}<a class="software-action software-action-primary" href="{{ .live_url }}" target="_blank" rel="noopener">{{ .live_label }} <span>↗</span></a>{{ end }}
+            <a class="software-action" href="{{ .repository }}" target="_blank" rel="noopener">View source <span>↗</span></a>
+          </div>
+        </div>
+      </article>
+    {{ end }}
+  </div>
+
+  <footer class="software-footer">
+    <p>Built in the open for researchers, kernel authors, and students.</p>
+    <a href="https://github.com/Deep-Learning-Profiling-Tools" target="_blank" rel="noopener">Explore the CAT Lab organization <span>↗</span></a>
+  </footer>
+</section>

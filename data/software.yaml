@@ -1,0 +1,54 @@
+projects:
+  - slug: linear-layout-viz
+    name: Linear Layout Viz
+    kicker: Interactive visualizer
+    description: Explore Triton linear layouts as interactive tensor maps. Inspect matrix views, select and slice dimensions, recolor cells, and export publication-ready SVGs.
+    repository: https://github.com/Deep-Learning-Profiling-Tools/linear-layout-viz
+    live_url: https://deep-learning-profiling-tools.github.io/linear-layout-viz/
+    live_label: Open visualizer
+    tags:
+      - Triton
+      - Linear layouts
+      - Interactive
+
+  - slug: tensor-viz
+    name: Tensor Viz
+    kicker: Local tensor viewer
+    description: Inspect N-dimensional NumPy arrays in a browser-based workspace. Slice, permute, color, compare, and organize tensors without leaving a local Python workflow.
+    repository: https://github.com/Deep-Learning-Profiling-Tools/tensor-viz
+    tags:
+      - NumPy
+      - N-D tensors
+      - Python + TypeScript
+
+  - slug: triton-viz
+    name: Triton Viz
+    kicker: Kernel insight toolkit
+    description: Visualize, profile, and check Triton kernels for memory-safety issues. Its interpreter-based workflow makes many debugging tasks available even without GPU access.
+    repository: https://github.com/Deep-Learning-Profiling-Tools/triton-viz
+    live_url: https://deep-learning-profiling-tools.github.io/triton-viz/
+    live_label: Explore the toolkit
+    tags:
+      - Visualization
+      - Profiling
+      - Sanitization
+
+  - slug: proton
+    name: Proton
+    kicker: Lightweight Triton profiler
+    description: Capture Python context, user annotations, Triton launch metadata, and GPU kernel metrics with compact profiles that open as trees or Chrome traces.
+    repository: https://github.com/triton-lang/triton/tree/main/third_party/proton
+    tags:
+      - GPU metrics
+      - Tracing
+      - Triton
+
+  - slug: fasten
+    name: Fasten
+    kicker: Fast segment operators
+    description: Accelerate heterogeneous graph neural networks with optimized segmented matrix multiplication and a simple interface designed to integrate with PyG.
+    repository: https://github.com/Deep-Learning-Profiling-Tools/fasten
+    tags:
+      - HGNN
+      - SegMM
+      - GPU kernels
