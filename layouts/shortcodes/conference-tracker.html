@@ -1,0 +1,127 @@
+{{ $tracker := site.Data.conferences }}
+<div class="conference-tracker" id="cat-conference-tracker">
+  <div class="conference-filters" aria-label="Filter deadlines by category">
+    <button type="button" class="btn btn-primary btn-sm" data-filter="all" aria-pressed="true">All</button>
+    {{ range $tracker.categories }}
+      <button type="button" class="btn btn-outline-primary btn-sm" data-filter="{{ .id }}" aria-pressed="false">{{ .label }}</button>
+    {{ end }}
+  </div>
+
+  <div class="conference-axis" aria-hidden="true">
+    <span class="conference-axis-label">Venue</span>
+    <div class="conference-axis-track">
+      <span data-axis-date="2026-07-27T00:00:00Z">Now</span>
+      <span data-axis-date="2026-09-01T00:00:00Z">Sep</span>
+      <span data-axis-date="2026-10-01T00:00:00Z">Oct</span>
+      <span data-axis-date="2026-11-01T00:00:00Z">Nov</span>
+      <span data-axis-date="2026-12-01T00:00:00Z">Dec</span>
+      <span data-axis-date="2027-01-01T00:00:00Z">Jan</span>
+    </div>
+    <span class="conference-axis-label conference-axis-label-right">Full paper</span>
+  </div>
+
+  <div class="conference-timeline" aria-live="polite">
+    {{ range $tracker.months }}
+      {{ range .events }}
+        <article
+          class="conference-row{{ if .prerequisite }} has-prerequisite{{ end }}"
+          data-category="{{ .category }}"
+          data-deadline="{{ .deadline }}"
+          {{ with .abstract_deadline }}data-abstract-deadline="{{ . }}"{{ end }}
+          data-name="{{ .name }}"
+          data-track="{{ .track }}"
+        >
+          <div class="conference-venue">
+            <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+            <small>{{ .category_label }}</small>
+            <span class="conference-mobile-date">{{ .date }}</span>
+          </div>
+
+          <div class="conference-track" aria-hidden="true">
+            <span class="conference-progress"></span>
+            {{ with .abstract_deadline }}<span class="conference-marker conference-abstract"></span>{{ end }}
+            <span class="conference-marker conference-paper"></span>
+          </div>
+
+          <div class="conference-deadline">
+            <strong>{{ .date }}</strong>
+            {{ if .prerequisite }}
+              <small data-status>{{ lower .prerequisite }}</small>
+            {{ else if .abstract_date }}
+              <small data-status>abstract {{ .abstract_date }}</small>
+            {{ else }}
+              <small data-status data-countdown></small>
+            {{ end }}
+          </div>
+        </article>
+      {{ end }}
+    {{ end }}
+  </div>
+
+  <div class="conference-legend" aria-label="Timeline legend">
+    <span><i class="conference-legend-abstract" aria-hidden="true"></i>abstract or registration</span>
+    <span><i class="conference-legend-paper" aria-hidden="true"></i>full paper</span>
+    <span><i class="conference-legend-passed" aria-hidden="true"></i>prerequisite already passed</span>
+  </div>
+
+  <p class="conference-note">Dates follow official calls for papers. AoE deadlines can appear on the next calendar day in Asia; expired rows fade automatically.</p>
+</div>
+
+<script>
+  (() => {
+    const root = document.getElementById("cat-conference-tracker");
+    if (!root) return;
+
+    const rows = Array.from(root.querySelectorAll(".conference-row"));
+    const buttons = Array.from(root.querySelectorAll("[data-filter]"));
+    const rangeStart = Date.parse("2026-07-27T00:00:00Z");
+    const rangeEnd = Date.parse("2027-01-31T23:59:59Z");
+    const now = Date.now();
+    const day = 86400000;
+    const position = (date) => {
+      const value = (Date.parse(date) - rangeStart) / (rangeEnd - rangeStart);
+      return `${Math.max(0, Math.min(1, value)) * 100}%`;
+    };
+
+    root.querySelectorAll("[data-axis-date]").forEach((tick) => {
+      tick.style.setProperty("--axis-x", position(tick.dataset.axisDate));
+    });
+
+    rows.forEach((row) => {
+      const deadline = Date.parse(row.dataset.deadline);
+      const remaining = Math.ceil((deadline - now) / day);
+      const status = row.querySelector("[data-status]");
+
+      row.style.setProperty("--paper-x", position(row.dataset.deadline));
+      if (row.dataset.abstractDeadline) {
+        row.style.setProperty("--abstract-x", position(row.dataset.abstractDeadline));
+        if (Date.parse(row.dataset.abstractDeadline) < now && deadline >= now) {
+          row.classList.add("is-prerequisite");
+        }
+      }
+
+      if (remaining < 0) {
+        row.classList.add("is-past");
+        if (status) status.textContent = "passed";
+      } else if (status && status.hasAttribute("data-countdown")) {
+        status.textContent = remaining === 0 ? "today" : `${remaining} day${remaining === 1 ? "" : "s"}`;
+      }
+    });
+
+    const applyFilter = (filter) => {
+      rows.forEach((row) => {
+        row.hidden = filter !== "all" && row.dataset.category !== filter;
+      });
+      buttons.forEach((button) => {
+        const selected = button.dataset.filter === filter;
+        button.setAttribute("aria-pressed", String(selected));
+        button.classList.toggle("btn-primary", selected);
+        button.classList.toggle("btn-outline-primary", !selected);
+      });
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => applyFilter(button.dataset.filter));
+    });
+  })();
+</script>

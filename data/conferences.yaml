@@ -1,0 +1,222 @@
+categories:
+  - id: architecture
+    label: Architecture
+  - id: systems
+    label: Systems
+  - id: compilers
+    label: Compilers
+  - id: software
+    label: SE
+  - id: ai
+    label: ML + AI
+  - id: nlp
+    label: NLP
+
+months:
+  - label: Jul 2026
+    events:
+      - name: HPCA 2027
+        date: Jul 31
+        deadline: 2026-08-01T11:59:59Z
+        track: Full paper
+        detail: Full paper · AoE
+        category: architecture
+        category_label: Architecture
+        signal: Author history
+        direct: true
+        prerequisite: Abstract passed
+        abstract_date: Jul 24
+        abstract_deadline: 2026-07-25T11:59:59Z
+        url: https://conf.researchr.org/track/hpca-2027/hpca-2027-main-conference
+
+  - label: Aug 2026
+    events:
+      - name: PPoPP 2027
+        date: Aug 3
+        deadline: 2026-08-04T11:59:59Z
+        track: Main paper
+        detail: Main conference paper
+        category: architecture
+        category_label: Parallel systems
+        signal: AE chair history
+        direct: true
+        url: https://ppopp27.sigplan.org/
+      - name: ACL ARR
+        date: Aug 3
+        deadline: 2026-08-03T23:59:59Z
+        track: August cycle
+        detail: August cycle · reviewer registration Aug 5
+        category: nlp
+        category_label: NLP
+        signal: Author + reviewer history
+        direct: true
+        url: https://aclrollingreview.org/dates
+      - name: NeurIPS 2026
+        date: Aug 4
+        deadline: 2026-08-04T23:59:00Z
+        track: Creative AI track
+        detail: Creative AI track · UTC
+        category: ai
+        category_label: ML + AI
+        signal: Author + reviewer history
+        direct: true
+        url: https://neurips.cc/Conferences/2026/CallForCreativeAI
+
+  - label: Sep 2026
+    events:
+      - name: ASPLOS 2027
+        date: Sep 9
+        deadline: 2026-09-10T11:59:59Z
+        track: April-cycle paper
+        detail: April cycle paper · AoE
+        category: architecture
+        category_label: Systems + architecture
+        signal: Author + AE history
+        direct: true
+        url: https://www.asplos-conference.org/asplos2027/cfp/
+      - name: CGO 2027
+        date: Sep 10
+        deadline: 2026-09-11T11:59:59Z
+        track: Round 2 paper
+        detail: Round 2 paper · official CFP
+        category: compilers
+        category_label: Compilers
+        signal: Author + PC + AE history
+        direct: true
+        url: https://conf.researchr.org/track/cgo-2027/cgo-2027-papers
+      - name: FAST 2027
+        date: Sep 15
+        deadline: 2026-09-16T11:59:59Z
+        track: Fall-cycle paper
+        detail: Fall-cycle paper · AoE
+        category: systems
+        category_label: Storage systems
+        signal: Adjacent to OSDI/ATC history
+        direct: false
+        url: https://www.usenix.org/conference/fast27/call-for-papers
+      - name: NSDI 2027
+        date: Sep 17
+        deadline: 2026-09-18T11:59:59Z
+        track: Fall-cycle paper
+        detail: Paper · abstract Sep 10 · AoE
+        category: systems
+        category_label: Networked systems
+        signal: Adjacent to systems history
+        direct: false
+        abstract_date: Sep 10
+        abstract_deadline: 2026-09-11T11:59:59Z
+        url: https://www.usenix.org/conference/nsdi27/call-for-papers
+      - name: EuroSys 2027
+        date: Sep 24
+        deadline: 2026-09-25T11:59:59Z
+        track: Fall-cycle paper
+        detail: Paper · abstract Sep 17 · AoE
+        category: systems
+        category_label: Computer systems
+        signal: Adjacent to OSDI/SOSP history
+        direct: false
+        abstract_date: Sep 17
+        abstract_deadline: 2026-09-18T11:59:59Z
+        url: https://2027.eurosys.org/cfp.html
+      - name: ICLR 2027
+        date: Sep 24
+        deadline: 2026-09-25T11:59:59Z
+        track: Main paper · projected
+        detail: Projected from the 2026 cycle · official date pending
+        category: ai
+        category_label: ML + AI
+        signal: Requested ML venue
+        direct: false
+        abstract_date: Sep 19
+        abstract_deadline: 2026-09-20T11:59:59Z
+        url: https://iclr.cc/
+
+  - label: Oct 2026
+    events:
+      - name: FSE 2027
+        date: Oct 2
+        deadline: 2026-10-03T11:59:59Z
+        track: Research paper
+        detail: Research paper · AoE
+        category: software
+        category_label: Software engineering
+        signal: Author history
+        direct: true
+        url: https://conf.researchr.org/track/fse-2027/fse-2027-papers
+      - name: SIGMETRICS 2027
+        date: Oct 9
+        deadline: 2026-10-10T11:59:59Z
+        track: Fall-cycle paper
+        detail: Fall cycle · abstract Oct 2
+        category: architecture
+        category_label: Architecture
+        signal: Author history
+        direct: true
+        abstract_date: Oct 2
+        abstract_deadline: 2026-10-03T11:59:59Z
+        url: https://www.sigmetrics.org/sigmetrics2027/pages/cfp.html
+      - name: ACL ARR
+        date: Oct 12
+        deadline: 2026-10-12T23:59:59Z
+        track: October cycle
+        detail: October review cycle
+        category: nlp
+        category_label: NLP
+        signal: Author + reviewer history
+        direct: true
+        url: https://aclrollingreview.org/dates
+
+  - label: Nov 2026
+    events:
+      - name: ICST 2027
+        date: Nov 2
+        deadline: 2026-11-03T11:59:59Z
+        track: Research paper
+        detail: Research paper · AoE
+        category: software
+        category_label: Software testing
+        signal: Adjacent to ISSTA/ASE history
+        direct: false
+        url: https://conf.researchr.org/track/icst-2027/icst-2027-research-papers
+
+  - label: Dec 2026
+    events:
+      - name: OSDI 2027
+        date: Dec 8
+        deadline: 2026-12-09T11:59:59Z
+        track: Full paper
+        detail: Paper · abstract Dec 1 · AoE
+        category: systems
+        category_label: Operating systems
+        signal: Author + AE history
+        direct: true
+        abstract_date: Dec 1
+        abstract_deadline: 2026-12-02T11:59:59Z
+        url: https://www.usenix.org/conference/osdi27/call-for-papers
+
+  - label: Jan 2027
+    events:
+      - name: SIGMETRICS 2027
+        date: Jan 11
+        deadline: 2027-01-12T11:59:59Z
+        track: Winter-cycle paper
+        detail: Winter cycle · abstract Jan 4
+        category: architecture
+        category_label: Architecture
+        signal: Author history
+        direct: true
+        abstract_date: Jan 4
+        abstract_deadline: 2027-01-05T11:59:59Z
+        url: https://www.sigmetrics.org/sigmetrics2027/pages/cfp.html
+      - name: ICML 2027
+        date: Jan 28
+        deadline: 2027-01-29T11:59:59Z
+        track: Main paper · projected
+        detail: Projected from the 2026 cycle · official date pending
+        category: ai
+        category_label: ML + AI
+        signal: Author + reviewer history
+        direct: true
+        abstract_date: Jan 23
+        abstract_deadline: 2027-01-24T11:59:59Z
+        url: https://icml.cc/
