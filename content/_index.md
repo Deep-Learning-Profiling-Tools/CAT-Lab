@@ -7,11 +7,11 @@ type: landing
 sections:
   - block: hero
     content:
-      title: Compilers and systems for faster intelligent computing.
+      title:
       image:
         filename: welcome.jpg
       text: |
-        CAT Lab at George Mason University builds compilers, architecture, and performance tools that make AI systems easier to understand and faster to run.
+        CAT Lab at George Mason University develops compilers, architectures, and tools that make AI systems easier to understand, faster to run, and more reliable at scale.
       cta:
         label: Explore Software
         url: software/
