@@ -27,6 +27,8 @@ months:
         signal: PC history · urgent
         direct: true
         prerequisite: Abstract passed
+        abstract_date: Jul 21
+        abstract_deadline: 2026-07-22T11:59:59Z
         url: https://aaai.org/conference/aaai/aaai-27/
       - name: HPCA 2027
         date: Jul 31
@@ -38,6 +40,8 @@ months:
         signal: Author history
         direct: true
         prerequisite: Abstract passed
+        abstract_date: Jul 24
+        abstract_deadline: 2026-07-25T11:59:59Z
         url: https://conf.researchr.org/track/hpca-2027/hpca-2027-main-conference
 
   - label: Aug 2026
@@ -114,6 +118,8 @@ months:
         category_label: Networked systems
         signal: Adjacent to systems history
         direct: false
+        abstract_date: Sep 10
+        abstract_deadline: 2026-09-11T11:59:59Z
         url: https://www.usenix.org/conference/nsdi27/call-for-papers
       - name: EuroSys 2027
         date: Sep 24
@@ -124,6 +130,8 @@ months:
         category_label: Computer systems
         signal: Adjacent to OSDI/SOSP history
         direct: false
+        abstract_date: Sep 17
+        abstract_deadline: 2026-09-18T11:59:59Z
         url: https://2027.eurosys.org/cfp.html
 
   - label: Oct 2026
@@ -147,6 +155,8 @@ months:
         category_label: Performance
         signal: Author history
         direct: true
+        abstract_date: Oct 2
+        abstract_deadline: 2026-10-03T11:59:59Z
         url: https://www.sigmetrics.org/sigmetrics2027/pages/cfp.html
       - name: ACL ARR
         date: Oct 12
@@ -180,6 +190,8 @@ months:
         category_label: Hardware security
         signal: Adjacent to architecture history
         direct: false
+        abstract_date: Nov 1
+        abstract_deadline: 2026-11-02T11:59:59Z
         url: https://host.conferences.computer.org/2027/
 
   - label: Dec 2026
@@ -193,6 +205,8 @@ months:
         category_label: Operating systems
         signal: Author + AE history
         direct: true
+        abstract_date: Dec 1
+        abstract_deadline: 2026-12-02T11:59:59Z
         url: https://www.usenix.org/conference/osdi27/call-for-papers
 
   - label: Jan 2027
@@ -206,4 +220,6 @@ months:
         category_label: Performance
         signal: Author history
         direct: true
+        abstract_date: Jan 4
+        abstract_deadline: 2027-01-05T11:59:59Z
         url: https://www.sigmetrics.org/sigmetrics2027/pages/cfp.html
