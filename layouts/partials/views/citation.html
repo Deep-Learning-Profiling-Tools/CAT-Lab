@@ -5,6 +5,7 @@
 {{ $venue := $venueFormatted | plainify }}
 {{ $venue = strings.TrimPrefix "In " $venue }}
 {{ $venue = strings.Replace (printf "%s" $venue) "*" "" }}
+{{ $venue = replaceRE (printf "\\s+%s$" ($item.Date.Format "2006")) "" $venue }}
 {{ $summary := "" }}
 {{ if $item.Params.summary }}
   {{ $summary = $item.Params.summary | markdownify | plainify }}
