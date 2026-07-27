@@ -1,0 +1,118 @@
+{{ $tracker := site.Data.conferences }}
+<div class="conference-tracker" id="cat-conference-tracker">
+  <div class="conference-summary" aria-label="Conference tracking summary">
+    <div class="conference-stat">
+      <span>Next deadline</span>
+      <strong id="conference-next">AAAI-27 · Jul 28</strong>
+      <small id="conference-next-track">Main technical paper</small>
+    </div>
+    <div class="conference-stat">
+      <span>Next 14 days</span>
+      <strong id="conference-near">5</strong>
+      <small>paper or cycle deadlines</small>
+    </div>
+    <div class="conference-stat">
+      <span>History match</span>
+      <strong id="conference-direct">12 direct</strong>
+      <small>plus adjacent venues</small>
+    </div>
+  </div>
+
+  <div class="conference-filters" aria-label="Filter deadlines by category">
+    <button type="button" class="btn btn-primary btn-sm" data-filter="all" aria-pressed="true">All</button>
+    {{ range $tracker.categories }}
+      <button type="button" class="btn btn-outline-primary btn-sm" data-filter="{{ .id }}" aria-pressed="false">{{ .label }}</button>
+    {{ end }}
+  </div>
+
+  <div aria-live="polite">
+    {{ range $tracker.months }}
+      <section class="conference-month" data-month-section>
+        <div class="conference-month-heading"><span>{{ .label }}</span></div>
+        {{ range .events }}
+          <article
+            class="conference-row{{ if .prerequisite }} has-prerequisite{{ end }}"
+            data-category="{{ .category }}"
+            data-deadline="{{ .deadline }}"
+            data-direct="{{ .direct }}"
+            data-name="{{ .name }}"
+            data-track="{{ .track }}"
+          >
+            <div class="conference-date">
+              <strong>{{ .date }}</strong>
+              {{ if .prerequisite }}<small>{{ .prerequisite }}</small>{{ else }}<small data-countdown></small>{{ end }}
+            </div>
+            <div class="conference-venue">
+              <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+              <small>{{ .detail }}</small>
+            </div>
+            <div class="conference-category"><span aria-hidden="true"></span>{{ .category_label }}</div>
+            <div class="conference-signal">{{ .signal }}</div>
+          </article>
+        {{ end }}
+      </section>
+    {{ end }}
+  </div>
+
+  <p class="conference-note">Dates follow official calls for papers. AoE deadlines can appear on the next calendar day in Asia; expired rows fade automatically.</p>
+</div>
+
+<script>
+  (() => {
+    const root = document.getElementById("cat-conference-tracker");
+    if (!root) return;
+
+    const rows = Array.from(root.querySelectorAll(".conference-row"));
+    const buttons = Array.from(root.querySelectorAll("[data-filter]"));
+    const sections = Array.from(root.querySelectorAll("[data-month-section]"));
+    const now = Date.now();
+    const day = 86400000;
+
+    rows.forEach((row) => {
+      const remaining = Math.ceil((Date.parse(row.dataset.deadline) - now) / day);
+      const countdown = row.querySelector("[data-countdown]");
+      if (remaining < 0) {
+        row.classList.add("is-past");
+        if (countdown) countdown.textContent = "Passed";
+      } else if (countdown) {
+        countdown.textContent = remaining === 0 ? "Today" : `${remaining} day${remaining === 1 ? "" : "s"}`;
+      }
+    });
+
+    const futureRows = rows
+      .filter((row) => Date.parse(row.dataset.deadline) >= now)
+      .sort((a, b) => Date.parse(a.dataset.deadline) - Date.parse(b.dataset.deadline));
+    const next = futureRows[0];
+    if (next) {
+      root.querySelector("#conference-next").textContent =
+        `${next.dataset.name} · ${next.querySelector(".conference-date strong").textContent}`;
+      root.querySelector("#conference-next-track").textContent = next.dataset.track;
+    }
+
+    root.querySelector("#conference-near").textContent = String(
+      futureRows.filter((row) => Date.parse(row.dataset.deadline) - now <= 14 * day).length
+    );
+    root.querySelector("#conference-direct").textContent =
+      `${rows.filter((row) => row.dataset.direct === "true").length} direct`;
+
+    const applyFilter = (filter) => {
+      rows.forEach((row) => {
+        row.hidden = filter !== "all" && row.dataset.category !== filter;
+      });
+      sections.forEach((section) => {
+        section.hidden = !Array.from(section.querySelectorAll(".conference-row"))
+          .some((row) => !row.hidden);
+      });
+      buttons.forEach((button) => {
+        const selected = button.dataset.filter === filter;
+        button.setAttribute("aria-pressed", String(selected));
+        button.classList.toggle("btn-primary", selected);
+        button.classList.toggle("btn-outline-primary", !selected);
+      });
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => applyFilter(button.dataset.filter));
+    });
+  })();
+</script>
