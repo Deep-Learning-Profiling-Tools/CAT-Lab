@@ -382,10 +382,6 @@
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
 }
 
-.software-card:last-child {
-  grid-column: 4 / span 6;
-}
-
 .software-preview {
   position: relative;
   min-height: 290px;
