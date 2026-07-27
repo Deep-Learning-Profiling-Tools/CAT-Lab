@@ -37,7 +37,7 @@
         >
           <div class="conference-venue">
             <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
-            <small>{{ .category_label }}</small>
+            <small>{{ .category_label }}{{ if .projected }} · <span class="conference-projected-label">projected</span>{{ end }}</small>
             <span class="conference-mobile-date">{{ .date }}</span>
           </div>
 
@@ -68,7 +68,7 @@
     <span><i class="conference-legend-passed" aria-hidden="true"></i>prerequisite already passed</span>
   </div>
 
-  <p class="conference-note">Dates follow official calls for papers. AoE deadlines can appear on the next calendar day in Asia; expired rows fade automatically.</p>
+  <p class="conference-note">Dates follow official calls for papers unless labeled projected. Projected dates are estimates based on prior cycles and remain clearly marked until an official deadline is published. AoE deadlines can appear on the next calendar day in Asia; expired rows fade automatically.</p>
 </div>
 
 <script>
