@@ -7,7 +7,7 @@ authors:
   - Denton Zhou
 
 superuser: false
-role: Visiting Student
+role: 2026 Summer -
 
 bio: Visiting student at CAT Lab.
 

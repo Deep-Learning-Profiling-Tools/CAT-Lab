@@ -1,67 +1,44 @@
 ---
-# Display name
 title: Jihyeong Lee
-
-# Full name (for SEO)
 first_name: Jihyeong
 last_name: Lee
 
-# Username (this should match the folder name)
 authors:
   - Jihyeong Lee
 
-# Is this the primary user of the site?
 superuser: false
+role: 2024 Fall - 2025 Fall
 
-# Role/position
-role: 2024 Fall - 
-
-# Organizations/Affiliations
 organizations:
+  - name: Point72
+    url: https://www.point72.com/
   - name: George Mason University
-    url: ''
+    url: https://www.gmu.edu/
 
-# Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: ML infrastructure engineer at Point72 working on hardware-aware performance optimization for deep learning.
 
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Machine Learning Infrastructure
+  - Deep Learning Systems
+  - GPU Performance Optimization
+  - Triton
 
 education:
   courses:
-    - course: PhD in Artificial Intelligence
-      institution: Stanford University
-      year: 2012
-    - course: MEng in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2009
-    - course: BSc in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2008
+    - course: Computer Science Research
+      institution: George Mason University
+      year: 2025
+    - course: BS in Computer Science and Mathematics, Minor in Physics
+      institution: University of Virginia
+      year: 2020
 
-# Social/Academic Networking
-# For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
-#   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
-#   form "mailto:your-email@example.com" or "#contact" for contact widget.
 social:
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/jlee2017/
-# Link to a PDF of your resume/CV from the About widget.
-# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-# - icon: cv
-#   icon_pack: ai
-#   link: files/cv.pdf
 
-# Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''
 
-# Organizational groups that you belong to (for People widget)
-#   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
   - Past Students
 ---
-
-say sth. here

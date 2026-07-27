@@ -14,7 +14,7 @@ authors:
 superuser: false
 
 # Role/position
-role: 2025 Fall —
+role: 2025 Fall -
 
 # Organizations/Affiliations
 organizations:
