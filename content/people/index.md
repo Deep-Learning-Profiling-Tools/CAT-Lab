@@ -14,6 +14,7 @@ sections:
           - Principal Investigator
           - PhD Students
           - Master Students
+          - Visiting Students
           - Undergraduate Students
           - High School Students
           - Collaborators
