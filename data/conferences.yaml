@@ -51,16 +51,6 @@ months:
         signal: Author + reviewer history
         direct: true
         url: https://aclrollingreview.org/dates
-      - name: NeurIPS 2026
-        date: Aug 4
-        deadline: 2026-08-04T23:59:00Z
-        track: Creative AI track
-        detail: Creative AI track · UTC
-        category: ai
-        category_label: ML + AI
-        signal: Author + reviewer history
-        direct: true
-        url: https://neurips.cc/Conferences/2026/CallForCreativeAI
 
   - label: Sep 2026
     events:
