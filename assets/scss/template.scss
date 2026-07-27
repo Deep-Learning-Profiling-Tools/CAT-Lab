@@ -27,7 +27,7 @@
 .conference-axis,
 .conference-row {
   display: grid;
-  grid-template-columns: minmax(118px, 160px) minmax(300px, 1fr) minmax(122px, 158px);
+  grid-template-columns: minmax(148px, 190px) minmax(280px, 1fr) minmax(122px, 158px);
   gap: 1rem;
   align-items: center;
 }
@@ -97,13 +97,13 @@
 }
 
 .conference-venue a {
-  overflow: hidden;
+  overflow: visible;
   color: var(--color-text, inherit);
   font-size: 1.02rem;
   font-weight: 600;
   line-height: 1.25;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  text-overflow: clip;
+  white-space: normal;
 }
 
 .conference-venue small,
