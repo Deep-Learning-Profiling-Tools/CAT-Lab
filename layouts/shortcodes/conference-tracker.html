@@ -16,6 +16,9 @@
       <span data-axis-date="2026-11-01T00:00:00Z">Nov</span>
       <span data-axis-date="2026-12-01T00:00:00Z">Dec</span>
       <span data-axis-date="2027-01-01T00:00:00Z">Jan</span>
+      <span data-axis-date="2027-02-01T00:00:00Z">Feb</span>
+      <span data-axis-date="2027-03-01T00:00:00Z">Mar</span>
+      <span data-axis-date="2027-04-01T00:00:00Z">Apr</span>
     </div>
     <span class="conference-axis-label conference-axis-label-right">Full paper</span>
   </div>
@@ -28,12 +31,13 @@
           data-category="{{ .category }}"
           data-deadline="{{ .deadline }}"
           {{ with .abstract_deadline }}data-abstract-deadline="{{ . }}"{{ end }}
+          {{ if .projected }}data-projected="true"{{ end }}
           data-name="{{ .name }}"
           data-track="{{ .track }}"
         >
           <div class="conference-venue">
             <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
-            <small>{{ .category_label }}</small>
+            <small>{{ .category_label }}{{ if .projected }} · <span class="conference-projected-label">projected</span>{{ end }}</small>
             <span class="conference-mobile-date">{{ .date }}</span>
           </div>
 
@@ -48,7 +52,7 @@
             {{ if .prerequisite }}
               <small data-status>{{ lower .prerequisite }}</small>
             {{ else if .abstract_date }}
-              <small data-status>abstract {{ .abstract_date }}</small>
+              <small data-status>{{ if .projected }}projected · {{ end }}abstract {{ .abstract_date }}</small>
             {{ else }}
               <small data-status data-countdown></small>
             {{ end }}
@@ -64,7 +68,7 @@
     <span><i class="conference-legend-passed" aria-hidden="true"></i>prerequisite already passed</span>
   </div>
 
-  <p class="conference-note">Dates follow official calls for papers. AoE deadlines can appear on the next calendar day in Asia; expired rows fade automatically.</p>
+  <p class="conference-note">Dates follow official calls for papers unless labeled projected. Projected dates are estimates based on prior cycles and remain clearly marked until an official deadline is published. AoE deadlines can appear on the next calendar day in Asia; expired rows fade automatically.</p>
 </div>
 
 <script>
@@ -75,7 +79,7 @@
     const rows = Array.from(root.querySelectorAll(".conference-row"));
     const buttons = Array.from(root.querySelectorAll("[data-filter]"));
     const rangeStart = Date.parse("2026-07-27T00:00:00Z");
-    const rangeEnd = Date.parse("2027-01-31T23:59:59Z");
+    const rangeEnd = Date.parse("2027-04-30T23:59:59Z");
     const now = Date.now();
     const day = 86400000;
     const position = (date) => {
@@ -104,7 +108,8 @@
         row.classList.add("is-past");
         if (status) status.textContent = "passed";
       } else if (status && status.hasAttribute("data-countdown")) {
-        status.textContent = remaining === 0 ? "today" : `${remaining} day${remaining === 1 ? "" : "s"}`;
+        const countdown = remaining === 0 ? "today" : `${remaining} day${remaining === 1 ? "" : "s"}`;
+        status.textContent = row.dataset.projected === "true" ? `projected · ${countdown}` : countdown;
       }
     });
 
