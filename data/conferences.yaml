@@ -157,19 +157,6 @@ months:
         direct: true
         url: https://aclrollingreview.org/dates
 
-  - label: Nov 2026
-    events:
-      - name: ICST 2027
-        date: Nov 2
-        deadline: 2026-11-03T11:59:59Z
-        track: Research paper
-        detail: Research paper · AoE
-        category: software
-        category_label: Software testing
-        signal: Adjacent to ISSTA/ASE history
-        direct: false
-        url: https://conf.researchr.org/track/icst-2027/icst-2027-research-papers
-
   - label: Dec 2026
     events:
       - name: OSDI 2027
