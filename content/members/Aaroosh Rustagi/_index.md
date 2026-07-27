@@ -7,9 +7,23 @@ authors:
   - Aaroosh Rustagi
 
 superuser: false
-role: High School Student
+role: 2026 Summer
 
-bio: High school student at CAT Lab.
+organizations:
+  - name: Lynbrook High School
+    url: https://lhs.fuhsd.org/
+
+bio: Student at Lynbrook High School and high school researcher at CAT Lab.
+
+interests:
+  - Computer Systems
+  - Machine Learning
+
+education:
+  courses:
+    - course: High School Diploma
+      institution: Lynbrook High School
+      year: 2027
 
 social:
   - icon: linkedin
