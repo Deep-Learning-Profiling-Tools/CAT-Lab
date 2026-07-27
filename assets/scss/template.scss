@@ -7,3 +7,139 @@
 .cta-group {
   justify-content: center;
 }
+
+.conference-tracker {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.conference-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.conference-stat {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(127, 127, 127, 0.25);
+  border-radius: 0.45rem;
+}
+
+.conference-stat span,
+.conference-stat small,
+.conference-venue small,
+.conference-signal,
+.conference-note {
+  color: var(--color-text-muted, #6c757d);
+}
+
+.conference-stat strong {
+  margin: 0.2rem 0;
+  font-size: 1.05rem;
+}
+
+.conference-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+.conference-month {
+  margin-top: 1.1rem;
+}
+
+.conference-month-heading {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  color: var(--color-text-muted, #6c757d);
+  font-size: 0.85rem;
+}
+
+.conference-month-heading::after {
+  content: "";
+  border-top: 1px solid rgba(127, 127, 127, 0.3);
+}
+
+.conference-row {
+  display: grid;
+  grid-template-columns: 78px minmax(170px, 1.25fr) minmax(130px, 0.8fr) minmax(150px, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  min-height: 58px;
+  border-bottom: 1px solid rgba(127, 127, 127, 0.2);
+}
+
+.conference-date,
+.conference-venue {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.conference-date strong,
+.conference-venue a {
+  font-weight: 600;
+}
+
+.conference-date small,
+.conference-venue small,
+.conference-category,
+.conference-signal,
+.conference-note {
+  font-size: 0.84rem;
+}
+
+.conference-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.conference-category span {
+  width: 0.55rem;
+  height: 0.55rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.conference-row.has-prerequisite .conference-date small {
+  color: #b3261e;
+}
+
+.conference-row.is-past {
+  opacity: 0.55;
+}
+
+.conference-note {
+  margin-top: 1rem;
+}
+
+.conference-tracker [hidden] {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .conference-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .conference-row {
+    grid-template-columns: 68px minmax(0, 1fr);
+    gap: 0.35rem 0.65rem;
+    padding: 0.7rem 0;
+  }
+
+  .conference-category,
+  .conference-signal {
+    grid-column: 2;
+  }
+}
