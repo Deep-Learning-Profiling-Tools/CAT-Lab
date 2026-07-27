@@ -157,6 +157,20 @@ months:
         direct: true
         url: https://aclrollingreview.org/dates
 
+  - label: Nov 2026
+    events:
+      - name: PLDI 2027
+        date: Nov 13
+        deadline: 2026-11-14T11:59:59Z
+        track: Main paper · projected
+        projected: true
+        detail: Projected from the 2026 cycle · official date pending
+        category: compilers
+        category_label: Compilers
+        signal: Adjacent to CGO/LCTES history
+        direct: false
+        url: https://pldi27.sigplan.org/
+
   - label: Dec 2026
     events:
       - name: OSDI 2027
