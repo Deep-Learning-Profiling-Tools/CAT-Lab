@@ -36,8 +36,8 @@ months:
         deadline: 2026-08-04T11:59:59Z
         track: Main paper
         detail: Main conference paper
-        category: architecture
-        category_label: Parallel systems
+        category: systems
+        category_label: Systems
         signal: AE chair history
         direct: true
         url: https://ppopp27.sigplan.org/
@@ -122,6 +122,7 @@ months:
         date: Sep 24
         deadline: 2026-09-25T11:59:59Z
         track: Main paper · projected
+        projected: true
         detail: Projected from the 2026 cycle · official date pending
         category: ai
         category_label: ML + AI
@@ -193,6 +194,17 @@ months:
         abstract_date: Dec 1
         abstract_deadline: 2026-12-02T11:59:59Z
         url: https://www.usenix.org/conference/osdi27/call-for-papers
+      - name: ICS 2027
+        date: Dec 17
+        deadline: 2026-12-18T11:59:59Z
+        track: Main paper · projected
+        projected: true
+        detail: Projected from the 2026 cycle · official date pending
+        category: architecture
+        category_label: Architecture
+        signal: Author + PC history
+        direct: true
+        url: https://ics-conference.org/
 
   - label: Jan 2027
     events:
@@ -212,6 +224,7 @@ months:
         date: Jan 28
         deadline: 2027-01-29T11:59:59Z
         track: Main paper · projected
+        projected: true
         detail: Projected from the 2026 cycle · official date pending
         category: ai
         category_label: ML + AI
@@ -220,3 +233,17 @@ months:
         abstract_date: Jan 23
         abstract_deadline: 2027-01-24T11:59:59Z
         url: https://icml.cc/
+
+  - label: Apr 2027
+    events:
+      - name: SOSP 2027
+        date: Apr 2
+        deadline: 2027-04-03T11:59:59Z
+        track: Main paper · projected
+        projected: true
+        detail: Projected from the 2026 cycle · official date pending
+        category: systems
+        category_label: Systems
+        signal: Author + AE history
+        direct: true
+        url: https://sosp.org/
