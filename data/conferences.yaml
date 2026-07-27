@@ -1,35 +1,20 @@
 categories:
   - id: architecture
-    label: Architecture + parallel
+    label: Architecture
   - id: systems
     label: Systems
   - id: compilers
     label: Compilers
   - id: software
-    label: SE + testing
+    label: SE
   - id: ai
     label: ML + AI
   - id: nlp
     label: NLP
-  - id: measurement
-    label: Performance + security
 
 months:
   - label: Jul 2026
     events:
-      - name: AAAI-27
-        date: Jul 28
-        deadline: 2026-07-29T11:59:59Z
-        track: Main technical paper
-        detail: Main technical track · AoE
-        category: ai
-        category_label: ML + AI
-        signal: PC history · urgent
-        direct: true
-        prerequisite: Abstract passed
-        abstract_date: Jul 21
-        abstract_deadline: 2026-07-22T11:59:59Z
-        url: https://aaai.org/conference/aaai/aaai-27/
       - name: HPCA 2027
         date: Jul 31
         deadline: 2026-08-01T11:59:59Z
@@ -133,6 +118,18 @@ months:
         abstract_date: Sep 17
         abstract_deadline: 2026-09-18T11:59:59Z
         url: https://2027.eurosys.org/cfp.html
+      - name: ICLR 2027
+        date: Sep 24
+        deadline: 2026-09-25T11:59:59Z
+        track: Main paper · projected
+        detail: Projected from the 2026 cycle · official date pending
+        category: ai
+        category_label: ML + AI
+        signal: Requested ML venue
+        direct: false
+        abstract_date: Sep 19
+        abstract_deadline: 2026-09-20T11:59:59Z
+        url: https://iclr.cc/
 
   - label: Oct 2026
     events:
@@ -151,8 +148,8 @@ months:
         deadline: 2026-10-10T11:59:59Z
         track: Fall-cycle paper
         detail: Fall cycle · abstract Oct 2
-        category: measurement
-        category_label: Performance
+        category: architecture
+        category_label: Architecture
         signal: Author history
         direct: true
         abstract_date: Oct 2
@@ -181,18 +178,6 @@ months:
         signal: Adjacent to ISSTA/ASE history
         direct: false
         url: https://conf.researchr.org/track/icst-2027/icst-2027-research-papers
-      - name: HOST 2027
-        date: Nov 8
-        deadline: 2026-11-09T11:59:59Z
-        track: Winter-cycle paper
-        detail: Paper · abstract Nov 1
-        category: measurement
-        category_label: Hardware security
-        signal: Adjacent to architecture history
-        direct: false
-        abstract_date: Nov 1
-        abstract_deadline: 2026-11-02T11:59:59Z
-        url: https://host.conferences.computer.org/2027/
 
   - label: Dec 2026
     events:
@@ -216,10 +201,22 @@ months:
         deadline: 2027-01-12T11:59:59Z
         track: Winter-cycle paper
         detail: Winter cycle · abstract Jan 4
-        category: measurement
-        category_label: Performance
+        category: architecture
+        category_label: Architecture
         signal: Author history
         direct: true
         abstract_date: Jan 4
         abstract_deadline: 2027-01-05T11:59:59Z
         url: https://www.sigmetrics.org/sigmetrics2027/pages/cfp.html
+      - name: ICML 2027
+        date: Jan 28
+        deadline: 2027-01-29T11:59:59Z
+        track: Main paper · projected
+        detail: Projected from the 2026 cycle · official date pending
+        category: ai
+        category_label: ML + AI
+        signal: Author + reviewer history
+        direct: true
+        abstract_date: Jan 23
+        abstract_deadline: 2027-01-24T11:59:59Z
+        url: https://icml.cc/
