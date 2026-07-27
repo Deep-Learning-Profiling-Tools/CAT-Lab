@@ -14,7 +14,6 @@
 <div class="people-widget">
   {{ with $block.content.title }}
     <div class="section-heading people-heading">
-      <p class="cat-overline">The people behind CAT Lab</p>
       <h1>{{ . | markdownify | emojify }}</h1>
       {{ with $block.content.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
     </div>
