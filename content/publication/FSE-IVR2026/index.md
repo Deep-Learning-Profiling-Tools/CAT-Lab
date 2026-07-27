@@ -39,7 +39,7 @@ publication_short: In *FSE-IVR 2026*
 tags: []
 
 # Display this page in the Featured widget?
-featured: false
+featured: true
 
 # Custom links (uncomment lines below)
 # links:
