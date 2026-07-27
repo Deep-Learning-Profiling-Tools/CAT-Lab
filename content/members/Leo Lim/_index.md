@@ -7,7 +7,7 @@ authors:
   - Leo Lim
 
 superuser: false
-role: High School Student
+role: 2025 Fall -
 
 organizations:
   - name: Thomas Jefferson High School for Science and Technology
