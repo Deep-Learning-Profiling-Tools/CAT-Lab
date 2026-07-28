@@ -11,18 +11,23 @@ sections:
       image:
         filename: welcome.jpg
       text: |
-        **CAT Lab** is dedicated to advancing the **Compiler, Architecture, and Toolkit (CAT)** foundations that power the next generation of intelligent systems.
-
-        Our research spans the full computing stack — from hardware architecture to compiler design, from performance profiling tools to AI-driven optimization frameworks. 
-
-        We aim to build an efficient and user-friendly infrastructure that helps enhance computational performance across diverse computing platforms.
-
+        CAT Lab at George Mason University develops compilers, architectures, and tools that make AI systems easier to understand, faster to run, and more reliable at scale.
+      cta:
+        label: Explore Software
+        url: software/
+        icon_pack: fas
+        icon: code
+      cta_alt:
+        label: View Publications
+        url: publication/
+      cta_note:
+        label: Compiler · Architecture · Toolkit
   
   - block: collection
     content:
       title: Latest News
-      subtitle:
-      text:
+      subtitle: What we are publishing, presenting, and building.
+      text: ''
       count: 3
       filters:
         author: ''
@@ -34,7 +39,7 @@ sections:
       order: desc
       page_type: news
     design:
-      view: card
+      view: compact
       columns: '1'
   
   # - block: markdown
@@ -60,8 +65,9 @@ sections:
   - block: collection
     content:
       title: Featured Publications
-      text: ""
-      count: 7
+      subtitle: Recent research from across the computing stack.
+      text: ''
+      count: 4
       filters:
         folders:
           - publication
@@ -75,7 +81,7 @@ sections:
       title:
       subtitle:
       text: |
-        {{% cta cta_link="./people/" cta_text="Meet the team →" %}}
+        {{% cta cta_link="./people/" cta_text="Meet the team" %}}
     design:
       columns: '1'
 ---

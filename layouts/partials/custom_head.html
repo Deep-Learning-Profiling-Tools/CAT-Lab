@@ -1,0 +1,3 @@
+{{ with resources.Get "media/icon.png" }}
+  <style>:root { --cat-logo-image: url("{{ .RelPermalink }}"); }</style>
+{{ end }}
