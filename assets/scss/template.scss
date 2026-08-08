@@ -93,7 +93,7 @@ a:hover {
 }
 
 .home-section {
-  padding: clamp(3.5rem, 7vw, 6.5rem) 0;
+  padding: clamp(3.1rem, 5.5vw, 5.25rem) 0;
   background: transparent;
 }
 
@@ -291,11 +291,11 @@ a:hover {
   position: relative;
   height: calc(100% - 1rem);
   margin-bottom: 1rem;
-  padding: clamp(1.25rem, 2.5vw, 2rem);
+  padding: clamp(1rem, 1.8vw, 1.45rem);
   border: 1px solid var(--cat-line);
-  border-radius: 18px;
+  border-radius: 15px;
   background: var(--cat-surface);
-  box-shadow: 0 12px 36px rgba(19, 43, 70, 0.045);
+  box-shadow: 0 8px 26px rgba(19, 43, 70, 0.04);
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
@@ -315,9 +315,9 @@ a:hover {
 
 .publication-card-title,
 .news-card h3 {
-  margin: 1.1rem 0 0.55rem;
-  font-size: clamp(1.25rem, 2.3vw, 1.7rem);
-  font-weight: 700;
+  margin: 0.8rem 0 0.42rem;
+  font-size: clamp(1.08rem, 1.8vw, 1.4rem);
+  font-weight: 690;
   letter-spacing: -0.03em;
   line-height: 1.22;
 }
@@ -330,16 +330,16 @@ a:hover {
 
 .publication-card-authors {
   color: var(--cat-muted);
-  font-size: 0.86rem;
-  line-height: 1.55;
+  font-size: 0.82rem;
+  line-height: 1.5;
 }
 
 .publication-card-summary,
 .news-card-body > p {
-  margin: 0.9rem 0;
+  margin: 0.7rem 0;
   color: var(--cat-muted);
-  font-size: 0.9rem;
-  line-height: 1.62;
+  font-size: 0.85rem;
+  line-height: 1.55;
 }
 
 .publication-card-actions {
@@ -348,8 +348,8 @@ a:hover {
   gap: 0.8rem;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1.25rem;
-  padding-top: 1rem;
+  margin-top: 0.9rem;
+  padding-top: 0.75rem;
   border-top: 1px solid var(--cat-line);
 }
 
@@ -367,8 +367,8 @@ a:hover {
 
 .news-card {
   display: grid;
-  grid-template-columns: 58px minmax(0, 1fr);
-  gap: 1.1rem;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 0.9rem;
 }
 
 .news-card-date {
@@ -378,7 +378,7 @@ a:hover {
   align-self: start;
   overflow: hidden;
   border: 1px solid var(--cat-line);
-  border-radius: 12px;
+  border-radius: 10px;
   color: var(--cat-navy);
   background: color-mix(in srgb, var(--cat-navy) 4%, var(--cat-surface));
   text-align: center;
@@ -398,7 +398,7 @@ a:hover {
 .news-card-date strong {
   padding-top: 0.35rem;
   color: var(--cat-navy);
-  font-size: 1.35rem;
+  font-size: 1.18rem;
   line-height: 1;
 }
 
@@ -409,19 +409,19 @@ a:hover {
 }
 
 .news-card h3 {
-  margin-top: 0.75rem;
+  margin-top: 0.55rem;
 }
 
 .home-section .col-12:has(> .news-card) {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .home-section .col-12:has(> .publication-card) {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 #container-publications .isotope-item {
@@ -453,14 +453,14 @@ a:hover {
 
 .people-heading {
   max-width: 720px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 3rem;
   text-align: center;
 }
 
 .people-heading h1 {
   margin: 0;
   color: var(--cat-navy);
-  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-size: clamp(2.25rem, 4.6vw, 3.9rem);
   font-weight: 730;
   letter-spacing: -0.055em;
 }
@@ -472,7 +472,7 @@ a:hover {
 }
 
 .people-group {
-  margin: 0 0 3.7rem;
+  margin: 0 0 2.9rem;
 }
 
 .people-group-heading {
@@ -487,7 +487,7 @@ a:hover {
 .people-group-heading h2 {
   margin: 0;
   color: var(--cat-navy);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 720;
   letter-spacing: -0.02em;
 }
@@ -516,18 +516,18 @@ a:hover {
 
 .people-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.8rem;
 }
 
 .people-grid-single {
-  grid-template-columns: minmax(250px, 320px);
+  grid-template-columns: minmax(220px, 270px);
 }
 
 .people-card {
   overflow: hidden;
   border: 1px solid var(--cat-line);
-  border-radius: 18px;
+  border-radius: 15px;
   background: var(--cat-surface);
   box-shadow: 0 10px 30px rgba(19, 43, 70, 0.04);
 }
@@ -552,13 +552,13 @@ a:hover {
 }
 
 .people-card-body {
-  padding: 1.2rem;
+  padding: 0.95rem;
   text-align: left;
 }
 
 .people-card-body h3 {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.02rem;
   font-weight: 710;
   line-height: 1.25;
 }
@@ -573,7 +573,7 @@ a:hover {
   min-height: 2.6em;
   margin: 0.45rem 0 0;
   color: var(--cat-muted);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   line-height: 1.35;
 }
 
@@ -581,26 +581,26 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
-  min-height: 3.5rem;
-  margin: 1rem 0 0;
+  min-height: 2.8rem;
+  margin: 0.75rem 0 0;
   padding: 0;
   list-style: none;
 }
 
 .people-interests li {
   align-self: flex-start;
-  padding: 0.3rem 0.52rem;
+  padding: 0.24rem 0.44rem;
   border-radius: 999px;
   color: var(--cat-navy-soft);
   background: color-mix(in srgb, var(--cat-blue) 8%, transparent);
-  font-size: 0.64rem;
+  font-size: 0.59rem;
   font-weight: 650;
   line-height: 1.2;
 }
 
 .people-social {
-  margin-top: 0.85rem;
-  padding-top: 0.75rem;
+  margin-top: 0.65rem;
+  padding-top: 0.6rem;
   border-top: 1px solid var(--cat-line);
 }
 
@@ -768,7 +768,7 @@ a:hover {
 
 @media (max-width: 520px) {
   .home-section {
-    padding: 3.25rem 0;
+    padding: 2.75rem 0;
   }
 
   .wg-hero .cta-btns {
@@ -782,7 +782,7 @@ a:hover {
   .news-card {
     grid-template-columns: 48px minmax(0, 1fr);
     gap: 0.85rem;
-    padding: 1rem;
+    padding: 0.85rem;
   }
 
   .people-grid,
@@ -792,7 +792,7 @@ a:hover {
 
   .people-card {
     display: grid;
-    grid-template-columns: 120px minmax(0, 1fr);
+    grid-template-columns: 104px minmax(0, 1fr);
   }
 
   .people-card-media {
@@ -1173,9 +1173,9 @@ a:hover {
 .software-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
-  gap: 4rem;
+  gap: 3rem;
   align-items: end;
-  padding: 2.5rem 0 4rem;
+  padding: 2rem 0 3rem;
   border-bottom: 1px solid var(--software-line);
 }
 
@@ -1193,7 +1193,7 @@ a:hover {
   max-width: 800px;
   margin: 0;
   color: var(--software-ink);
-  font-size: clamp(2.7rem, 7vw, 5.8rem);
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
   font-weight: 650;
   letter-spacing: -0.065em;
   line-height: 0.9;
@@ -1231,7 +1231,7 @@ a:hover {
 .software-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 1.2rem;
+  gap: 0.9rem;
   padding: 1.2rem 0;
 }
 
@@ -1239,9 +1239,9 @@ a:hover {
   grid-column: span 6;
   overflow: hidden;
   border: 1px solid var(--software-line);
-  border-radius: 22px;
+  border-radius: 16px;
   background: var(--software-paper);
-  box-shadow: 0 22px 60px rgba(14, 18, 27, 0.05);
+  box-shadow: 0 14px 40px rgba(14, 18, 27, 0.045);
 }
 
 .software-card:first-child {
@@ -1252,14 +1252,14 @@ a:hover {
 
 .software-preview {
   position: relative;
-  min-height: 290px;
+  min-height: 250px;
   overflow: hidden;
   color: rgba(255, 255, 255, 0.9);
   background: #141820;
 }
 
 .software-card:first-child .software-preview {
-  min-height: 430px;
+  min-height: 360px;
 }
 
 .software-preview-topline {
@@ -1295,20 +1295,20 @@ a:hover {
 .software-card-body {
   display: flex;
   flex-direction: column;
-  min-height: 338px;
-  padding: 2rem;
+  min-height: 280px;
+  padding: 1.5rem;
 }
 
 .software-card:first-child .software-card-body {
   justify-content: center;
-  min-height: 430px;
-  padding: clamp(2rem, 5vw, 4.2rem);
+  min-height: 360px;
+  padding: clamp(1.75rem, 3.5vw, 3rem);
 }
 
 .software-card h2 {
   margin: 0;
   color: var(--software-ink);
-  font-size: clamp(2rem, 4vw, 3.6rem);
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
   font-weight: 650;
   letter-spacing: -0.055em;
   line-height: 0.95;
@@ -1316,27 +1316,27 @@ a:hover {
 
 .software-description {
   max-width: 620px;
-  margin: 1.2rem 0 0;
+  margin: 0.85rem 0 0;
   color: #5a6069;
-  font-size: 0.96rem;
-  line-height: 1.65;
+  font-size: 0.88rem;
+  line-height: 1.55;
 }
 
 .software-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
-  margin: 1.5rem 0 0;
+  margin: 1rem 0 0;
   padding: 0;
   list-style: none;
 }
 
 .software-tags li {
-  padding: 0.35rem 0.65rem;
+  padding: 0.3rem 0.55rem;
   border: 1px solid rgba(17, 19, 24, 0.15);
   border-radius: 999px;
   color: #4f5560;
-  font-size: 0.72rem;
+  font-size: 0.67rem;
 }
 
 .software-actions {
@@ -1344,7 +1344,7 @@ a:hover {
   flex-wrap: wrap;
   gap: 0.55rem;
   margin-top: auto;
-  padding-top: 1.8rem;
+  padding-top: 1.3rem;
 }
 
 .software-action {
@@ -1352,12 +1352,12 @@ a:hover {
   gap: 0.7rem;
   align-items: center;
   justify-content: space-between;
-  min-width: 132px;
-  padding: 0.72rem 0.9rem;
+  min-width: 118px;
+  padding: 0.6rem 0.75rem;
   border: 1px solid rgba(17, 19, 24, 0.16);
   border-radius: 10px;
   color: var(--software-ink);
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 650;
   text-decoration: none;
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
