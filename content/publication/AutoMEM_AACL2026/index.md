@@ -12,8 +12,6 @@ authors:
   - Jiliang Tang
 date: '2026-11-06T00:00:00Z'
 publishDate: '2026-09-08T00:00:00Z'
-# Confirm the title-to-acceptance match before publishing this entry.
-draft: true
 publication_types: ['paper-conference']
 publication: Asia-Pacific Chapter of the Association for Computational Linguistics and International Joint Conference on Natural Language Processing
 publication_short: In *AACL-IJCNLP 2026*

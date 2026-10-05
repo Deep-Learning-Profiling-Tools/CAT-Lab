@@ -2,8 +2,6 @@
 title: 'AutoMEM Accepted at AACL 2026'
 summary: 'Our collaboration on cross-scenario generality of agent memory systems and the AutoMEM baseline has been accepted at AACL-IJCNLP 2026.'
 date: 2026-09-08
-# Confirm the title-to-acceptance match before publishing this announcement.
-draft: true
 tags: ['publication', 'AACL', 'LLM Agents', 'Agent Memory']
 authors:
   - Zhikai Chen
