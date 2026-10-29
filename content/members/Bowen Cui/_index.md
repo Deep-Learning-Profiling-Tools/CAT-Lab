@@ -1,6 +1,7 @@
 ---
 # Display name
 title: Bowen Cui
+external_link: "https://bowencui123.github.io/"
 
 # Full name (for SEO)
 first_name: Bowen

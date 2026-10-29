@@ -50,6 +50,9 @@
             {{ with site.GetPage (printf "/authors/%s" (path.Base .File.Dir)) }}
               {{ $link = .RelPermalink }}
             {{ end }}
+            {{ with .Params.external_link }}
+              {{ $link = . }}
+            {{ end }}
             <article class="people-person people-card">
               {{ $src := "" }}
               {{ if site.Params.features.avatar.gravatar }}
