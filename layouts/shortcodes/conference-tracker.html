@@ -1,4 +1,16 @@
 {{ $tracker := site.Data.conferences }}
+{{ $events := slice }}
+{{ range $tracker.months }}
+  {{ range .events }}
+    {{ $cutoff := .deadline }}
+    {{ if eq (len $cutoff) 10 }}
+      {{ $cutoff = printf "%sT23:59:59-12:00" $cutoff }}
+    {{ end }}
+    {{ if (time.AsTime $cutoff).After now }}
+      {{ $events = $events | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
 <div class="conference-tracker" id="cat-conference-tracker">
   <div class="conference-filters" aria-label="Filter deadlines by category">
     <button type="button" class="btn btn-primary btn-sm" data-filter="all" aria-pressed="true">All</button>
@@ -9,36 +21,27 @@
 
   <div class="conference-axis" aria-hidden="true">
     <span class="conference-axis-label">Venue</span>
-    <div class="conference-axis-track">
-      <span data-axis-date="2026-07-27T00:00:00Z">Now</span>
-      <span data-axis-date="2026-09-01T00:00:00Z">Sep</span>
-      <span data-axis-date="2026-10-01T00:00:00Z">Oct</span>
-      <span data-axis-date="2026-11-01T00:00:00Z">Nov</span>
-      <span data-axis-date="2026-12-01T00:00:00Z">Dec</span>
-      <span data-axis-date="2027-01-01T00:00:00Z">Jan</span>
-      <span data-axis-date="2027-02-01T00:00:00Z">Feb</span>
-      <span data-axis-date="2027-03-01T00:00:00Z">Mar</span>
-      <span data-axis-date="2027-04-01T00:00:00Z">Apr</span>
-    </div>
+    <div class="conference-axis-track"></div>
     <span class="conference-axis-label conference-axis-label-right">Full paper</span>
   </div>
 
   <div class="conference-timeline" aria-live="polite">
-    {{ range $tracker.months }}
-      {{ range .events }}
+      {{ range sort $events "deadline" }}
         <article
-          class="conference-row{{ if .prerequisite }} has-prerequisite{{ end }}"
+          class="conference-row"
           data-category="{{ .category }}"
           data-deadline="{{ .deadline }}"
           {{ with .abstract_deadline }}data-abstract-deadline="{{ . }}"{{ end }}
-          {{ if .projected }}data-projected="true"{{ end }}
+          data-prerequisite-label="{{ default "Abstract" .abstract_label }}"
           data-name="{{ .name }}"
           data-track="{{ .track }}"
         >
-          <div class="conference-venue">
+          <div class="conference-venue" title="{{ .detail }}">
             <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
-            <small>{{ .category_label }}{{ if .projected }} · <span class="conference-projected-label">projected</span>{{ end }}</small>
+            <small>{{ .category_label }}{{ if .tentative }} · <span class="conference-projected-label">provisional</span>{{ end }}</small>
+            <small>{{ .detail }}</small>
             <span class="conference-mobile-date">{{ .date }}</span>
+            {{ if .abstract_date }}<span class="conference-mobile-date" data-status>{{ lower (default "Abstract" .abstract_label) }} {{ .abstract_date }}</span>{{ end }}
           </div>
 
           <div class="conference-track" aria-hidden="true">
@@ -49,18 +52,16 @@
 
           <div class="conference-deadline">
             <strong>{{ .date }}</strong>
-            {{ if .prerequisite }}
-              <small data-status>{{ lower .prerequisite }}</small>
-            {{ else if .abstract_date }}
-              <small data-status>{{ if .projected }}projected · {{ end }}abstract {{ .abstract_date }}</small>
+            {{ if .abstract_date }}
+              <small data-status>{{ lower (default "Abstract" .abstract_label) }} {{ .abstract_date }}</small>
             {{ else }}
               <small data-status data-countdown></small>
             {{ end }}
           </div>
         </article>
       {{ end }}
-    {{ end }}
   </div>
+  <p class="conference-note" data-empty{{ if $events }} hidden{{ end }}>No upcoming deadlines in this category.</p>
 
   <div class="conference-legend" aria-label="Timeline legend">
     <span><i class="conference-legend-abstract" aria-hidden="true"></i>abstract or registration</span>
@@ -68,7 +69,17 @@
     <span><i class="conference-legend-passed" aria-hidden="true"></i>prerequisite already passed</span>
   </div>
 
-  <p class="conference-note">Dates follow official calls for papers unless labeled projected. Projected dates are estimates based on prior cycles and remain clearly marked until an official deadline is published. AoE deadlines can appear on the next calendar day in Asia; expired rows fade automatically.</p>
+  <p class="conference-note">Checked {{ $tracker.updated }}. Dates and cutoff times follow the linked official calls for papers. Provisional dates and unpublished cutoff timezones are marked. AoE means Anywhere on Earth (UTC−12). Expired paper deadlines are hidden automatically; an orange marker means the mandatory abstract or registration deadline has passed.</p>
+  {{ with $tracker.pending }}
+  <div class="conference-pending">
+    <p class="conference-note">Awaiting an official paper deadline:</p>
+    <ul>
+      {{ range . }}
+      <li data-pending-category="{{ .category }}"><a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a> — deadline to be announced</li>
+      {{ end }}
+    </ul>
+  </div>
+  {{ end }}
 </div>
 
 <script>
@@ -78,45 +89,60 @@
 
     const rows = Array.from(root.querySelectorAll(".conference-row"));
     const buttons = Array.from(root.querySelectorAll("[data-filter]"));
-    const rangeStart = Date.parse("2026-07-27T00:00:00Z");
-    const rangeEnd = Date.parse("2027-04-30T23:59:59Z");
-    const now = Date.now();
     const day = 86400000;
-    const position = (date) => {
-      const value = (Date.parse(date) - rangeStart) / (rangeEnd - rangeStart);
-      return `${Math.max(0, Math.min(1, value)) * 100}%`;
-    };
-
-    root.querySelectorAll("[data-axis-date]").forEach((tick) => {
-      tick.style.setProperty("--axis-x", position(tick.dataset.axisDate));
-    });
-
-    rows.forEach((row) => {
-      const deadline = Date.parse(row.dataset.deadline);
-      const remaining = Math.ceil((deadline - now) / day);
-      const status = row.querySelector("[data-status]");
-
-      row.style.setProperty("--paper-x", position(row.dataset.deadline));
-      if (row.dataset.abstractDeadline) {
-        row.style.setProperty("--abstract-x", position(row.dataset.abstractDeadline));
-        if (Date.parse(row.dataset.abstractDeadline) < now && deadline >= now) {
-          row.classList.add("is-prerequisite");
-        }
-      }
-
-      if (remaining < 0) {
-        row.classList.add("is-past");
-        if (status) status.textContent = "passed";
-      } else if (status && status.hasAttribute("data-countdown")) {
-        const countdown = remaining === 0 ? "today" : `${remaining} day${remaining === 1 ? "" : "s"}`;
-        status.textContent = row.dataset.projected === "true" ? `projected · ${countdown}` : countdown;
-      }
-    });
-
+    // Date-only announcements have no confirmed cutoff timezone. Use the last
+    // possible end of that calendar date only for expiry and timeline placement.
+    const timestamp = (date) => Date.parse(date.length === 10 ? `${date}T23:59:59-12:00` : date);
+    let selectedFilter = "all";
     const applyFilter = (filter) => {
+      selectedFilter = filter;
+      const now = Date.now();
+      const rangeStart = now;
+      const upcoming = rows.filter((row) => timestamp(row.dataset.deadline) > now);
+      const lastDeadline = Math.max(now + 30 * day, ...upcoming.map((row) => timestamp(row.dataset.deadline)));
+      const lastDate = new Date(lastDeadline);
+      const rangeEnd = Date.UTC(lastDate.getUTCFullYear(), lastDate.getUTCMonth() + 1, 1);
+      const position = (date) => `${Math.max(0, Math.min(1, (timestamp(date) - rangeStart) / (rangeEnd - rangeStart))) * 100}%`;
+      const axis = root.querySelector(".conference-axis-track");
+      axis.replaceChildren();
+      const addTick = (date, label) => {
+        const tick = document.createElement("span");
+        tick.textContent = label;
+        tick.style.setProperty("--axis-x", position(date));
+        axis.append(tick);
+      };
+      addTick(new Date(now).toISOString(), "Now");
+      const month = new Date(Date.UTC(new Date(now).getUTCFullYear(), new Date(now).getUTCMonth() + 1, 1));
+      const monthCount = (new Date(rangeEnd).getUTCFullYear() - month.getUTCFullYear()) * 12 + new Date(rangeEnd).getUTCMonth() - month.getUTCMonth();
+      const step = Math.max(1, Math.ceil(monthCount / 7));
+      let index = 0;
+      for (; month.getTime() < rangeEnd; month.setUTCMonth(month.getUTCMonth() + 1), index++) {
+        if (month.getTime() - now < 14 * day || index % step !== 0) continue;
+        addTick(month.toISOString(), month.toLocaleDateString("en-US", { month: "short", timeZone: "UTC" }));
+      }
+      let visible = 0;
       rows.forEach((row) => {
-        row.hidden = filter !== "all" && row.dataset.category !== filter;
+        const deadline = timestamp(row.dataset.deadline);
+        row.hidden = deadline <= now || (filter !== "all" && row.dataset.category !== filter);
+        if (!row.hidden) visible++;
+        row.style.setProperty("--paper-x", position(row.dataset.deadline));
+        const statuses = row.querySelectorAll("[data-status]");
+        if (row.dataset.abstractDeadline) {
+          row.style.setProperty("--abstract-x", position(row.dataset.abstractDeadline));
+          const passed = timestamp(row.dataset.abstractDeadline) <= now;
+          row.classList.toggle("is-prerequisite", passed);
+          if (passed) statuses.forEach((status) => { status.textContent = `${row.dataset.prerequisiteLabel.toLowerCase()} passed`; });
+        } else {
+          const remaining = Math.ceil((deadline - now) / day);
+          statuses.forEach((status) => { status.textContent = remaining <= 1 ? "less than 1 day" : `${remaining} days`; });
+        }
       });
+      root.querySelector("[data-empty]").hidden = visible > 0;
+      root.querySelectorAll("[data-pending-category]").forEach((item) => {
+        item.hidden = filter !== "all" && item.dataset.pendingCategory !== filter;
+      });
+      const pending = root.querySelector(".conference-pending");
+      if (pending) pending.hidden = !Array.from(pending.querySelectorAll("li")).some((item) => !item.hidden);
       buttons.forEach((button) => {
         const selected = button.dataset.filter === filter;
         button.setAttribute("aria-pressed", String(selected));
@@ -128,5 +154,7 @@
     buttons.forEach((button) => {
       button.addEventListener("click", () => applyFilter(button.dataset.filter));
     });
+    applyFilter(selectedFilter);
+    window.setInterval(() => applyFilter(selectedFilter), 60000);
   })();
 </script>

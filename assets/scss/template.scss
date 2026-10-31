@@ -927,6 +927,7 @@ a:hover {
 
 .conference-row {
   min-height: 64px;
+  padding: 0.65rem 0;
   border-bottom: 1px solid rgba(127, 127, 127, 0.18);
 }
 
@@ -1044,10 +1045,6 @@ a:hover {
   color: var(--conference-orange);
 }
 
-.conference-row.is-past {
-  opacity: 0.48;
-}
-
 .conference-legend {
   display: flex;
   flex-wrap: wrap;
@@ -1094,10 +1091,8 @@ a:hover {
   .conference-filters {
     flex-wrap: nowrap;
     overflow-x: auto;
-    margin-right: -1rem;
     margin-bottom: 2rem;
-    margin-left: -1rem;
-    padding: 0.35rem 1rem 0.65rem;
+    padding: 0.35rem 0.2rem 0.65rem;
     scrollbar-width: none;
   }
 
@@ -1120,11 +1115,7 @@ a:hover {
     display: none;
   }
 
-  .conference-axis-track > span:nth-child(2),
-  .conference-axis-track > span:nth-child(4),
-  .conference-axis-track > span:nth-child(5),
-  .conference-axis-track > span:nth-child(7),
-  .conference-axis-track > span:nth-child(8) {
+  .conference-axis-track > span:nth-child(even) {
     display: none;
   }
 
