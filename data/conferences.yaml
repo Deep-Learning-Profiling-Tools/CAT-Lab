@@ -15,6 +15,72 @@ categories:
 months:
   - label: Nov 2026
     events:
+      - name: VLDB 2027
+        date: Nov 1, 2026
+        deadline: "2026-11-02T01:00:00Z"
+        track: November-cycle paper
+        detail: November-cycle paper · 17:00 PST; abstract cutoff time pending
+        category: systems
+        category_label: Databases · November cycle
+        abstract_date: Oct 25
+        abstract_deadline: "2026-10-25"
+        url: https://www.vldb.org/2027/submission-guidelines.html
+      - name: RTAS 2027
+        date: Nov 5, 2026
+        deadline: "2026-11-06T11:59:59Z"
+        track: Research paper
+        detail: Research paper · 23:59 AoE
+        category: systems
+        category_label: Real-time + embedded systems
+        url: https://2027.rtas.org/cfp/
+      - name: SenSys 2027
+        date: Nov 5, 2026
+        deadline: "2026-11-06T11:59:59Z"
+        track: Cycle 2 paper
+        detail: Cycle 2 paper · 23:59 AoE
+        category: systems
+        category_label: Embedded AI + sensing systems
+        abstract_date: Oct 29
+        abstract_deadline: "2026-10-30T11:59:59Z"
+        url: https://sensys.acm.org/2027/cfp.html
+      - name: ICDE 2027
+        date: Nov 11, 2026
+        deadline: "2026-11-12T01:00:00Z"
+        track: Round 2 research paper
+        detail: Round 2 research paper · 17:00 PST
+        category: systems
+        category_label: Data engineering
+        url: https://icde2027.github.io/important-dates.html
+      - name: IMC 2027
+        date: Nov 17, 2026
+        deadline: "2026-11-18T11:59:59Z"
+        track: Cycle 1 paper
+        detail: Cycle 1 paper · 23:59 AoE
+        category: systems
+        category_label: Internet measurement · cycle 1
+        abstract_date: Nov 10
+        abstract_deadline: "2026-11-11T11:59:59Z"
+        url: https://conferences.sigcomm.org/imc/2027/submission-instructions/
+      - name: IEEE S&P 2027
+        date: Nov 17, 2026
+        deadline: "2026-11-18T11:59:59Z"
+        track: Cycle 2 paper
+        detail: Cycle 2 paper · 23:59 AoE
+        category: systems
+        category_label: Security + privacy
+        abstract_date: Nov 10
+        abstract_deadline: "2026-11-11T11:59:59Z"
+        url: https://www.ieee-security.org/TC/SP2027/cfpapers.html
+      - name: DAC 2027
+        date: Nov 18, 2026
+        deadline: "2026-11-19T01:00:00Z"
+        track: Research manuscript
+        detail: Research manuscript · 17:00 PST
+        category: systems
+        category_label: Design automation
+        url: https://dac.com/2027/program/research-manuscript-submissions
+        abstract_date: Nov 11
+        abstract_deadline: "2026-11-12T01:00:00Z"
       - name: PLDI 2027
         date: Nov 12, 2026
         deadline: 2026-11-13T11:59:59Z
@@ -55,6 +121,26 @@ months:
 
   - label: Dec 2026
     events:
+      - name: VLDB 2027
+        date: Dec 1, 2026
+        deadline: "2026-12-02T01:00:00Z"
+        track: December-cycle paper
+        detail: December-cycle paper · 17:00 PST; abstract cutoff time pending
+        category: systems
+        category_label: Databases · December cycle
+        abstract_date: Nov 25
+        abstract_deadline: "2026-11-25"
+        url: https://www.vldb.org/2027/submission-guidelines.html
+      - name: MobiSys 2027
+        date: Dec 4, 2026
+        deadline: "2026-12-05T11:59:59Z"
+        track: Research paper
+        detail: Research paper · 23:59 AoE
+        category: systems
+        category_label: Mobile systems
+        abstract_date: Nov 27
+        abstract_deadline: "2026-11-28T11:59:59Z"
+        url: https://www.sigmobile.org/mobisys/2027/call_for_papers/
       - name: DSN 2027
         date: Dec 2, 2026
         deadline: 2026-12-03T11:59:59Z
@@ -98,6 +184,63 @@ months:
 
   - label: Jan 2027
     events:
+      - name: VLDB 2027
+        date: Jan 1, 2027
+        deadline: "2027-01-02T01:00:00Z"
+        track: January-cycle paper
+        detail: January-cycle paper · 17:00 PST; abstract cutoff time pending
+        category: systems
+        category_label: Databases · January cycle
+        abstract_date: Dec 25
+        abstract_deadline: "2026-12-25"
+        url: https://www.vldb.org/2027/submission-guidelines.html
+      - name: ISSTA 2027
+        date: Jan 11, 2027
+        deadline: "2027-01-12T11:59:59Z"
+        track: Research paper
+        detail: Research paper · 23:59 AoE
+        category: systems
+        category_label: Software testing + analysis
+        abstract_date: Jan 8
+        abstract_deadline: "2027-01-09T11:59:59Z"
+        url: https://conf.researchr.org/track/issta-2027/issta-2027-research-papers
+      - name: CAV 2027
+        date: Jan 20, 2027
+        deadline: "2027-01-21T11:59:59Z"
+        track: Research paper
+        detail: Research paper · 23:59 AoE
+        category: pl
+        category_label: Computer-aided verification
+        url: https://conferences.i-cav.org/2027/
+      - name: LICS 2027
+        date: Jan 21, 2027
+        deadline: "2027-01-22T11:59:59Z"
+        track: Research paper
+        detail: Research paper · 23:59 AoE
+        category: pl
+        category_label: Logic in computer science
+        abstract_date: Jan 14
+        abstract_deadline: "2027-01-15T11:59:59Z"
+        url: https://lics.siglog.org/lics27/cfp.php
+      - name: USENIX Security 2027
+        date: Jan 26, 2027
+        deadline: "2027-01-27T11:59:59Z"
+        track: Cycle 2 paper
+        detail: Cycle 2 paper · 23:59 AoE
+        category: systems
+        category_label: Systems security
+        abstract_date: Jan 19
+        abstract_deadline: "2027-01-20T11:59:59Z"
+        url: https://www.usenix.org/conference/usenixsecurity27/call-for-papers
+        abstract_label: Registration
+      - name: COLT 2027
+        date: Jan 29, 2027
+        deadline: "2027-01-30T11:59:59Z"
+        track: Research paper
+        detail: Research paper · 23:59 AoE
+        category: ai
+        category_label: Learning theory
+        url: https://learningtheory.org/colt2027/
       - name: SIGMETRICS 2027
         date: Jan 11, 2027
         deadline: 2027-01-12T11:59:59Z
@@ -142,6 +285,24 @@ months:
 
   - label: Feb 2027
     events:
+      - name: SIGCOMM 2027
+        date: Feb 2, 2027
+        deadline: "2027-02-02"
+        track: Research paper
+        detail: Research paper · cutoff timezone pending
+        category: systems
+        category_label: Computer networks
+        url: https://conferences.sigcomm.org/sigcomm/2027/submission/
+      - name: VLDB 2027
+        date: Feb 1, 2027
+        deadline: "2027-02-02T01:00:00Z"
+        track: February-cycle paper
+        detail: February-cycle paper · 17:00 PST; abstract cutoff time pending
+        category: systems
+        category_label: Databases · February cycle
+        abstract_date: Jan 25
+        abstract_deadline: "2027-01-25"
+        url: https://www.vldb.org/2027/submission-guidelines.html
       - name: ECOOP 2027
         date: Feb 11, 2027
         deadline: 2027-02-12T11:59:59Z
@@ -169,8 +330,31 @@ months:
         category_label: Functional programming
         url: https://icfp27.sigplan.org/track/icfp-2027-icfp-papers
 
+  - label: Mar 2027
+    events:
+      - name: VLDB 2027
+        date: Mar 1, 2027
+        deadline: "2027-03-02T01:00:00Z"
+        track: March-cycle paper
+        detail: March-cycle paper · 17:00 PST; abstract cutoff time pending
+        category: systems
+        category_label: Databases · March cycle
+        abstract_date: Feb 25
+        abstract_deadline: "2027-02-25"
+        url: https://www.vldb.org/2027/submission-guidelines.html
+
   - label: Apr 2027
     events:
+      - name: IMC 2027
+        date: Apr 7, 2027
+        deadline: "2027-04-08T11:59:59Z"
+        track: Cycle 2 paper
+        detail: Cycle 2 paper · 23:59 AoE
+        category: systems
+        category_label: Internet measurement · cycle 2
+        abstract_date: Mar 31
+        abstract_deadline: "2027-04-01T11:59:59Z"
+        url: https://conferences.sigcomm.org/imc/2027/submission-instructions/
       - name: OOPSLA 2027
         date: Apr 7, 2027
         deadline: 2027-04-08T11:59:59Z
@@ -193,11 +377,5 @@ months:
         abstract_deadline: "2027-05-28"
         url: https://middleware-conf.github.io/2027/call-for-papers/
 
-# Keep unannounced deadlines out of the dated timeline and countdowns.
-pending:
-  - name: ICML 2027
-    category: ai
-    url: https://icml.cc/Conferences/FutureMeetings
-  - name: SOSP 2027
-    category: systems
-    url: https://sosp.org/
+# Coverage of closed, unannounced, and unresolved CSRankings venues is tracked
+# separately in data/conference_coverage.yaml; no estimated dates are rendered.
