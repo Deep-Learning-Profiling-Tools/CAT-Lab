@@ -69,17 +69,6 @@
     <span><i class="conference-legend-passed" aria-hidden="true"></i>prerequisite already passed</span>
   </div>
 
-  <p class="conference-note">Checked {{ $tracker.updated }}. Dates and cutoff times follow the linked official calls for papers. Provisional dates and unpublished cutoff timezones are marked. AoE means Anywhere on Earth (UTC−12). Expired paper deadlines are hidden automatically; an orange marker means the mandatory abstract or registration deadline has passed.</p>
-  {{ with $tracker.pending }}
-  <div class="conference-pending">
-    <p class="conference-note">Awaiting an official paper deadline:</p>
-    <ul>
-      {{ range . }}
-      <li data-pending-category="{{ .category }}"><a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a> — deadline to be announced</li>
-      {{ end }}
-    </ul>
-  </div>
-  {{ end }}
 </div>
 
 <script>
@@ -138,11 +127,6 @@
         }
       });
       root.querySelector("[data-empty]").hidden = visible > 0;
-      root.querySelectorAll("[data-pending-category]").forEach((item) => {
-        item.hidden = filter !== "all" && item.dataset.pendingCategory !== filter;
-      });
-      const pending = root.querySelector(".conference-pending");
-      if (pending) pending.hidden = !Array.from(pending.querySelectorAll("li")).some((item) => !item.hidden);
       buttons.forEach((button) => {
         const selected = button.dataset.filter === filter;
         button.setAttribute("aria-pressed", String(selected));
