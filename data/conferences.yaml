@@ -1,4 +1,4 @@
-updated: "2026-10-30"
+updated: "2026-10-31"
 
 categories:
   - id: systems
@@ -34,6 +34,16 @@ months:
         abstract_date: Nov 10
         abstract_deadline: 2026-11-11T11:59:59Z
         url: https://cvpr.thecvf.com/Conferences/2027/CallForPapers
+      - name: ISCA 2027
+        date: Nov 16, 2026
+        deadline: 2026-11-17T11:59:59Z
+        track: Main-track paper
+        detail: Main-track paper · 23:59 AoE
+        category: systems
+        category_label: Computer architecture
+        abstract_date: Nov 9
+        abstract_deadline: 2026-11-10T11:59:59Z
+        url: https://iscaconf.org/isca2027/submit/callforpapers.php
       - name: ECOOP 2027
         date: Nov 19, 2026
         deadline: 2026-11-20T11:59:59Z
@@ -119,6 +129,16 @@ months:
         abstract_date: Jan 11
         abstract_deadline: "2027-01-11"
         url: https://iticse.acm.org/2027/
+      - name: SPAA 2027
+        date: Jan 29, 2027
+        deadline: 2027-01-30T11:59:59Z
+        track: Cycle 2 paper
+        detail: Cycle 2 paper · 23:59 AoE
+        category: systems
+        category_label: Parallel computing · cycle 2
+        abstract_date: Jan 22
+        abstract_deadline: 2027-01-23T11:59:59Z
+        url: https://spaa.acm.org/spaa-2027-call-for-papers/
 
   - label: Feb 2027
     events:
